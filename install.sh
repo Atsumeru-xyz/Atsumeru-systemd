@@ -160,9 +160,10 @@ if [ "$menu" -eq 2 ]; then
                         if [[ $versions = "$(sort -V <<< "$versions")" ]]; then
                                 echo 'Update run!'
                                 sudo systemctl stop ${app,,}.service
+                                sleep 5
                                 mv -f /tmp/${app}.jar "$dir"/${app}.jar
                                 sudo systemctl start ${app,,}.service
-                                sleep 2
+                                sleep 5
                                 stat=$(sudo systemctl show -p ActiveState --value ${app,,})
                                 if [ "$stat" == "active" ]; then
                                         whiptail --title " ok! (￣-￣)ゞ " --msgbox "Update complete !" $H $W 3>&1 1>&2 2>&3
@@ -187,7 +188,7 @@ if [ "$menu" -eq 3 ]; then
         check=$(whiptail --title " (」°ﾛ°)｣ " --checklist \
 "What exactly do you want to remove?" $H $W 5 3>&1 1>&2 2>&3 \
 "1" "Atsumeru server service" ON \
-"2" "Server directory !!! will delete all files in $dir !!!" OFF \
+"2" "Server directory !!! Will delete all files in $dir !!!" OFF \
 "3" "Purge OpenJRE 11" OFF)
 
         if [[ "$check" =~ .*1.* ]]; then
