@@ -20,4 +20,4 @@ All info is available on [Atsumeru](https://atsumeru.xyz/) website
 
 ## Acknowledgments
 
-* [AtsumeruDev](https://t.me/atsumeru_app)
+* [Atsumeru-xyz](https://t.me/atsumeru_app)
