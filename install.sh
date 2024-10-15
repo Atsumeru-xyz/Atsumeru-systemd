@@ -3,7 +3,7 @@ set -eou pipefail
 
 # env
 app="Atsumeru"
-repoowner="AtsumeruDev"
+repoowner="Atsumeru-xyz"
 dir="/opt/${app,,}"
 user="${app,,}"
 update_="sudo apt update "
